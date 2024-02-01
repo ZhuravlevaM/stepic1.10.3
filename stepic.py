@@ -1,30 +1,41 @@
-n = int(input())
-numbers = []
-Even = [] #четное
-Odd = [] #нечетное
-finaly_numbers = []
-while n >0: #цикл где мы вводим числа определяем принадлежность и добавляем в нужный список
-    num = int(input())
-    numbers.append(num)
-    if num%2 == 0:
-        Even.append(num)
+nums = ['1','2', '3', '4', '5', '6', '7', '8', '9', '0']
+v_split = list(input())
+print(v_split)
+for i in nums:
+    if v_split[0] == i:
+        print("Нельзя использовать")
+        break
+    for j in v_split:
+        if j != j.isdigit() or j != j.isalpha() or j != '_':
+            print('Нельзя использовать')
+            break
     else:
-        Odd.append(num)
-    n -= 1
-#min_Even = min(Even)# определяем минимальное значение в каждом списке
-#min_Odd = min(Odd)
-if len(Even) == 0:
-    min_Even = 0
-else:
-    min_Even = min(Even)
-if len(Odd) == 0:
-    min_Odd = 0
-else:
-    min_Odd = min(Odd)
-sum_min_even_min_odd = min_Even + min_Odd #сумму минимального нечетного и минимального четного элементов
-for i in numbers: # цикл для вывода конечного списка
-    if i < sum_min_even_min_odd:
-        finaly_numbers.append(i + sum_min_even_min_odd)#увеличьте все элементы набора, меньшие M, на M
-    elif i > sum_min_even_min_odd:
-        finaly_numbers.append(i)
-print(*finaly_numbers, sep=' ')#Выведите элементы обработанного набора чисел через пробел.
+        print('Можно использовать')
+
+или 
+
+def check_variable(v):
+    while v != 'Поработали, и хватит':
+        v_split = list(v)
+        #print(v_split)
+        #for i in v_split:
+        for j in nums:
+            if v_split[0] == str(j):
+                print("Нельзя использовать")
+                continue
+            for i in v_split:
+                for j in symbols:
+                    if i == j:
+                        print("Нельзя использовать")
+                        continue
+        else :
+            print("Можно использовать")
+        v = input()
+        # ваш код
+# ваш код
+
+nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+symbols = [' ', '~', '!', '@', '&', '#', '$', '%', '^', '*', '(', ')', '+', '|', '"', ':', '}', '{', '?', '>', '<', '/', '-', '`', '\'', '=', '-', '[', ']', ' ', '№', ';',',']
+
+v = input()
+check_variable(v)
