@@ -1,0 +1,13 @@
+first_experiments = input().split()
+second_experiments = input().split()
+count = 0
+if len(first_experiments) == len(second_experiments):
+    for i in first_experiments:
+        for j in second_experiments:
+            if i != j:
+                count += 1
+percent = count/len(first_experiments)
+if percent > 7:
+    print('Корректно')
+else:
+    print('Некорректно')
